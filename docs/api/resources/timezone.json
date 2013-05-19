@@ -1,0 +1,98 @@
+{
+    "basePath": "http://api.geonames.dev",
+    "swaggerVersion": "1.1",
+    "apiVersion": "N.N",
+    "resourcePath": "/timezone",
+    "apis": [
+        {
+            "path": "/timezone",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Timezone Information as XML",
+                    "nickname": "timezone",
+                    "notes": "Get the timezone at the specific Latitude and Longitude with GMT Offset (1. January) and DST Offset (1. July)",
+                    "parameters": [
+                        {
+                            "name": "lat",
+                            "description": "Latitude",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "lng",
+                            "description": "Longitude",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "radius",
+                            "description": "buffer in km for closest timezone in coastal areas",
+                            "allowMultiple": false,
+                            "dataType": "integer",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "date",
+                            "description": null,
+                            "allowMultiple": false,
+                            "dataType": "date",
+                            "paramType": "query",
+                            "required": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/timezoneJSON",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Timezone Information as JSON",
+                    "nickname": "timezone-json",
+                    "notes": "Get the timezone at the specific Latitude and Longitude with GMT Offset (1. January) and DST Offset (1. July)",
+                    "parameters": [
+                        {
+                            "name": "lat",
+                            "description": "Latitude",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "lng",
+                            "description": "Longitude",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": true
+                        },
+                        {
+                            "name": "radius",
+                            "description": "buffer in km for closest timezone in coastal areas",
+                            "allowMultiple": false,
+                            "dataType": "integer",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "date",
+                            "description": null,
+                            "allowMultiple": false,
+                            "dataType": "date",
+                            "paramType": "query",
+                            "required": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -5,6 +5,10 @@
         {
             "path": "/resources/search.{format}",
             "description": null
+        },
+        {
+            "path": "/resources/timezone.{format}",
+            "description": null
         }
     ]
 }
