@@ -745,6 +745,13 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
     overflow-y: auto;
 }
 
+body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content div.response div.block pre code {
+    background-color: transparent;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post {
     float: none;
     clear: both;
