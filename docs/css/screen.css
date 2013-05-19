@@ -563,6 +563,13 @@ body ul#resources li.resource:hover div.heading ul.options li a, body ul#resourc
     color: #555555;
 }
 
+body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation code {
+    background-color: #fff;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get {
     float: none;
     clear: both;
