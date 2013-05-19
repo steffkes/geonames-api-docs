@@ -1,0 +1,314 @@
+{
+    "basePath": "http://api.geonames.dev",
+    "swaggerVersion": "1.1",
+    "apiVersion": "N.N",
+    "resourcePath": "/search",
+    "apis": [
+        {
+            "path": "/search",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "/search summary",
+                    "nickname": "search",
+                    "notes": "/!\\ either <code>q</code>, <code>name</code> or <code>name_equals</code> are required",
+                    "parameters": [
+                        {
+                            "name": "q",
+                            "description": "search over all attributes of a place : place name, country name, continent, admin codes,...",
+                            "allowMultiple": false,
+                            "dataType": "string (Important: <a href='http://forum.geonames.org/gforum/posts/list/8.page'>urlencoded utf8</a>)",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "name",
+                            "description": "place name only",
+                            "allowMultiple": false,
+                            "dataType": "string (Important: <a href='http://forum.geonames.org/gforum/posts/list/8.page'>urlencoded utf8</a>)",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "name_equals",
+                            "description": "exact place name",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "name_startsWith",
+                            "description": "place name starts with given characters",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "maxRows",
+                            "description": "the maximal number of rows in the document returned by the service. Default is <code>100</code>, the maximal allowed value is <code>1000</code>.",
+                            "allowMultiple": false,
+                            "dataType": "integer",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "startRow",
+                            "description": "Used for paging results. If you want to get results <code>30</code> to <code>40</code>, use <code>startRow=30&maxRows=10</code>. Default is <code>0</code>.",
+                            "allowMultiple": false,
+                            "dataType": "integer",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "country",
+                            "description": "Default is all countries. The country parameter may occur more than once, example: <code>country=FR&country=GP</code>",
+                            "allowMultiple": true,
+                            "dataType": "string (<a href='http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2'>ISO 3166-1 alpha-2</a>)",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "countryBias",
+                            "description": "records from the countryBias are listed first",
+                            "allowMultiple": false,
+                            "dataType": "string (<a href='http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2'>ISO 3166-1 alpha-2</a>)",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "continentCode",
+                            "description": "restricts the search for toponym of the given continent.",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "AF",
+                                "AS",
+                                "EU",
+                                "NA",
+                                "OC",
+                                "SA",
+                                "AN"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "adminCode1",
+                            "description": "code of administrative subdivision",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "adminCode2",
+                            "description": "code of administrative subdivision",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "adminCode3",
+                            "description": "code of administrative subdivision",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "featureClass",
+                            "description": "default=all feature classes; this parameter may occur more than once, example: <code>featureClass=P&featureClass=A</code>",
+                            "allowMultiple": true,
+                            "dataType": "string (<a href='http://www.geonames.org/export/codes.html'>featureclass(es)</a>)",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "A",
+                                "H",
+                                "L",
+                                "P",
+                                "R",
+                                "S",
+                                "T",
+                                "U",
+                                "V"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "featureCode",
+                            "description": "default= all feature codes; this parameter may occur more than once, example: <code>featureCode=PPLC&featureCode=PPLX</code>",
+                            "allowMultiple": true,
+                            "dataType": "string (<a href='http://www.geonames.org/export/codes.html'>featurecode(s)</a>)",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "A",
+                                "H",
+                                "L",
+                                "P",
+                                "R",
+                                "S",
+                                "T",
+                                "U",
+                                "V"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "lang",
+                            "description": "place name and country name will be returned in the specified language. Default is English. Feature classes and codes are only available in English and Bulgarian. Any <a href='http://forum.geonames.org/gforum/posts/list/25.page'>help in translating</a> is welcome.",
+                            "allowMultiple": false,
+                            "dataType": "string (<a href='http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2'>ISO 3166-1 alpha-2</a>)",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "type",
+                            "description": "the format type of the returned document, default = xml",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "xml",
+                                "json",
+                                "rdf"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "style",
+                            "description": "verbosity of returned xml document, default = MEDIUM",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "SHORT",
+                                "MEDIUM",
+                                "LONG",
+                                "FULL"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "isNameRequired",
+                            "description": "At least one of the search term needs to be part of the place name. Example : A normal search for <code>Berlin</code> will return all places within the state of Berlin. If we only want to find places with <code>Berlin</code> in the name we set the parameter <code>isNameRequired=true</code>. The difference to the <code>name_equals</code> parameter is that this will allow searches for <code>Berlin, Germany</code> as only one search term needs to be part of the name.",
+                            "allowMultiple": false,
+                            "dataType": "boolean",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "tag",
+                            "description": "search for toponyms tagged with the specified tag",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "operator",
+                            "description": "default is <code>AND</code>, with the operator <code>OR</code> not all search terms need to be matched by the response",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues":{
+                              "valueType":"LIST",
+                              "values":[
+                                "AND",
+                                "OR"
+                              ]
+                            }
+                        },
+                        {
+                            "name": "charset",
+                            "description": "default is <code>UTF8</code>, defines the encoding used for the document returned by the web service.",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "fuzzy",
+                            "description": "default is <code>1.0</code>, defines the fuzziness of the search terms. float between <code>0.0</code> and <code>1.0</code>.",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false,
+                            "allowableValues": {
+                              "valueType": "RANGE",
+                              "min": 0.0,
+                              "max": 1.0
+                            }
+                        },
+                        {
+                            "name": "east",
+                            "description": "bounding box, only features within the box are returned",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "west",
+                            "description": "bounding box, only features within the box are returned",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "north",
+                            "description": "bounding box, only features within the box are returned",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "south",
+                            "description": "bounding box, only features within the box are returned",
+                            "allowMultiple": false,
+                            "dataType": "float",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "searchlang",
+                            "description": "in combination with the <code>name</code> parameter, the search will only consider names in the specified language. Used for instance to query for <a href='http://www.iata.org/publications/Pages/code-search.aspx'>IATA</a> airport codes.",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        },
+                        {
+                            "name": "orderby",
+                            "description": "in combination with the <code>name_startsWith</code>, if set to <code>orderby=relevance</code> than the result is sorted by relevance.",
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query",
+                            "required": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
